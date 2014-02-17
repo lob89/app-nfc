@@ -59,6 +59,7 @@ var app = {
             id = nfc.bytesToString(ndefMessage[0].payload).substring(3)
             if (window.confirm('Tag contains ID - ' + id))
             {
+               
                 window.location = '/view.html?id=' + id;
             }
             else
@@ -75,6 +76,19 @@ var app = {
         }
         );
     },
+
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+    }
+
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);

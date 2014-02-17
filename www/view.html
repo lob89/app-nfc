@@ -26,13 +26,21 @@
        
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
+
+        <script type="text/javascript">
+       function alertId {
+             id = getQueryVariable("id");
+              alert("ID of page is -" + id);
+        }
+
+
+
+
+        </script>
     </head>
     <body>
         <div class="app">
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+            <a onClick="alertId()" href="#">Get ID of page</a>
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
