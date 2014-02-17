@@ -27,25 +27,76 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
 
-        <script type="text/javascript">
-       function alertId {
-             id = getQueryVariable("id");
-              alert("ID of page is -" + id);
-        }
-
-
-
-
-        </script>
     </head>
     <body>
         <div class="app">
             <a onClick="alertId()" href="#">Get ID of page</a>
+            <p id="ID"></p>
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+
+
+        </script>
+
+
+        <script type="text/javascript">
+
+        function getQueryVariable(variable) {
+            console.log(variable);
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+        }
+
+
+        function alertId() {
+            console.log("alert started")
+            var id = getQueryVariable("id");
+              alert("ID of page is -" + id);
+        }
+
+        function start() {
+                    
+        var div = document.getElementById('ID');
+        var id = getQueryVariable("id");
+        div.innerHTML = div.innerHTML + 'ID of page is - ' + id;
+        alertId();
+
+
+        }
+
+      
+
+
+
+       /* Requests = {
+        QueryString : function(item){
+            console.log("request");
+        var svalue = location.search.match(new RegExp(“[\?\&]” + item + “=([^\&]*)(\&?)”,”i”));
+        return svalue ? svalue[1] : svalue;
+          }
+        }
+
+    /*    function alertId() {
+             id = Requests.QueryString(“id”);
+              alert("ID of page is -" + id);
+        }*/
+
+ 
+
+         window.onload = start;
+
+        
+
+
+
         </script>
     </body>
 </html>
