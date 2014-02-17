@@ -52,12 +52,19 @@ var app = {
             // dump the raw json of the message
             // note: real code will need to decode
             // the payload from each record
-            alert(JSON.stringify(ndefMessage));
+         //   alert(JSON.stringify(ndefMessage));
 
             // assuming the first record in the message has 
             // a payload that can be converted to a string.
             id = nfc.bytesToString(ndefMessage[0].payload).substring(3)
-            alert("Tag contains ID - " +  id);
+            if (window.confirm('Tag contains ID - ' + id))
+            {
+                window.location = '/view.html?id=' + id;
+            }
+            else
+            {
+                // They clicked no
+            }
           
         }, 
         function () { // success callback
