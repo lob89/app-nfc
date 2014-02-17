@@ -56,8 +56,9 @@ var app = {
 
             // assuming the first record in the message has 
             // a payload that can be converted to a string.
-            alert(nfc.bytesToString(ndefMessage[0].payload).substring(3));
-             alert(nfc.bytesToString(ndefMessage[11].payload).substring(3));
+            id = nfc.bytesToString(ndefMessage[0].payload).substring(3)
+            alert("Tag contains ID - " id);
+          
         }, 
         function () { // success callback
             alert("Waiting for NDEF tag");
