@@ -16,8 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    font-family: 'Droid Sans', sans-serif;
+
 }
 
 body {
@@ -41,7 +44,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -68,14 +70,6 @@ body {
     }
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
 
 .event {
     border-radius:4px;
@@ -111,4 +105,75 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+html,body {
+    height: 100%;
+}
+body {
+    background: white;
+
+}
+
+#scanner, #app-container {
+    background: #F2F2F2;
+    border: #F0F8FF;
+    margin: 15px;
+    padding: 5px;
+    min-height: 100%; /* Set to minimum height so overflow doesn't get hidden */
+    overflow-y: hidden; /* HIDE overflow; I know, it doesn't make much sense */
+    position: relative;
+}
+
+header {
+    background: #2a2a2a;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+
+#scanner {
+    text-align: center;
+    padding-top: 15px;
+}
+
+#scanner-logo-container {
+    position: absolute;
+    top: 45px;
+    color: #FFF;
+    left: 20px;
+}
+
+#scanner-logo-container #status {
+    position: absolute;
+    top: 45px;
+    color: #FFF;
+    left: 20px;
+}
+
+/* #exhibition */
+
+#exhibition #event-title {
+    font-style: italic;
+    font-size: 10px;
+}
+
+#exhibition #exb-gallery {
+    width: 100%;
+    display: block;
+    height: 150px;
+    overflow: hidden;
+}
+
+#exhibition #exb-gallery img {
+    width: 100%;
+}
+
+
+h1 {
+    font-size: 30px;
+    font-weight: 100;
+    margin: 0px;
+    text-align: center;
+    color: #4A4A4A;
 }
