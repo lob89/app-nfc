@@ -118,8 +118,6 @@ body {
 #scanner, #app-container {
     background: #F2F2F2;
     border: #F0F8FF;
-    margin: 15px;
-    padding: 5px;
     min-height: 100%; /* Set to minimum height so overflow doesn't get hidden */
     overflow-y: hidden; /* HIDE overflow; I know, it doesn't make much sense */
     position: relative;
@@ -138,20 +136,24 @@ header {
 }
 
 #scanner-logo-container {
-    position: absolute;
-    top: 45px;
+     position: relative;
+    top: 85px;
     color: #FFF;
     left: 20px;
 }
 
 #scanner-logo-container #status {
-    position: absolute;
-    top: 45px;
+    position: relative;
+    top: 85px;
     color: #FFF;
-    left: 20px;
+    left: -3px;
 }
 
 /* #exhibition */
+
+#exhibition {
+    padding: 10px;
+}
 
 #exhibition #event-title {
     font-style: italic;
