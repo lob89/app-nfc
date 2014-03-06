@@ -57,6 +57,10 @@ var app = {
             // assuming the first record in the message has 
             // a payload that can be converted to a string.
             id = nfc.bytesToString(ndefMessage[0].payload).substring(3)
+            
+            time = getTime();
+            console.log(time);
+
             if (window.confirm('Tag contains ID - ' + id))
             {
 
@@ -92,4 +96,21 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+
 };
+
+
+
+    function getTime() {
+
+            var currentdate = new Date(); 
+            var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+            var v = currentdate.getDate()
+            return v;
+
+    } 
