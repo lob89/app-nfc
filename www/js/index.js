@@ -58,8 +58,8 @@ var app = {
             // a payload that can be converted to a string.
             id = nfc.bytesToString(ndefMessage[0].payload).substring(3)
             
-            time = getTime();
-            console.log(time);
+            time = getTime()
+            console.log(time)
 
             if (window.confirm('Tag contains ID - ' + id))
             {
@@ -73,7 +73,10 @@ var app = {
           
         }, 
         function () { // success callback
-            alert("Waiting for NDEF tag");
+            alert("Waiting for NDEF tag")
+                time = getTime();
+            console.log(time);
+            console.log("yo");
         },
         function (error) { // error callback
             alert("Error adding NDEF listener " + JSON.stringify(error));
@@ -93,6 +96,16 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
+              time = getTime();
+            console.log("unix time is " + time);
+
+            var t = new Date( time );
+            var meh = new Date(parseInt(time));
+
+            var myDatee = new Date(time);
+
+
+            console.log(meh + " - " + myDatee);
 
         console.log('Received Event: ' + id);
     }
@@ -110,7 +123,7 @@ var app = {
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
-            var v = currentdate.getDate()
+            var v = new Date().getTime();
             return v;
 
     } 
