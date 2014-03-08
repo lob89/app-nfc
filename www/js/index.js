@@ -103,7 +103,7 @@ var app = {
             var meh = new Date(parseInt(time));
 
             var myDatee = new Date(time);
-
+            //gets unix date and converts to date object, this can be used to sort results. 
 
             console.log(meh + " - " + myDatee);
 
