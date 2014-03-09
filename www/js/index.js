@@ -67,7 +67,7 @@ var app = {
             if (window.confirm('Tag contains ID - ' + id))
             {
 
-                scanned.appendChild('id scanned - ' + id);
+                $('#thelist').append("<li> ID IS -" + scanned + "</li>");
                 console.log("scann id added to app");
 
             }
@@ -101,7 +101,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-              time = getTime();
+        time = getTime();
             console.log("unix time is " + time);
 
             var t = new Date( time );
@@ -135,11 +135,9 @@ var app = {
 
     function fakeTag(id) {
         var scanned = id;
-          
         if (window.confirm('Tag contains ID - ' + scanned)) {
             $('#thelist').append("<li> ID IS -" + scanned + "</li>");
-                console.log("scann id added to app" + id);
-
+             console.log("scann id added to app" + id);
             }
             else
             {
