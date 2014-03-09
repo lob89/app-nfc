@@ -40,14 +40,16 @@ var app = {
   //      app.receivedEvent('deviceready');
    // },
 
+
    onDeviceReady: function() {
     app.receivedEvent('deviceready');
 
     // Read NDEF formatted NFC Tags
+
     nfc.addNdefListener (
         function (nfcEvent) {
             var tag = nfcEvent.tag,
-                ndefMessage = tag.ndefMessage;
+            ndefMessage = tag.ndefMessage;
 
             // dump the raw json of the message
             // note: real code will need to decode
@@ -60,11 +62,14 @@ var app = {
             
             time = getTime()
             console.log(time)
+            var scanned = document.getElementById('scanned');
 
             if (window.confirm('Tag contains ID - ' + id))
             {
 
-                window.location = 'view.html?id=' + id;
+                scanned.appendChild('id scanned - ' + id);
+                console.log("scann id added to app");
+
             }
             else
             {
@@ -127,3 +132,18 @@ var app = {
             return v;
 
     } 
+
+    function fakeTag(id) {
+        var scanned = id;
+          
+        if (window.confirm('Tag contains ID - ' + scanned)) {
+            $('#thelist').append("<li> ID IS -" + scanned + "</li>");
+                console.log("scann id added to app" + id);
+
+            }
+            else
+            {
+                // They clicked no
+            }
+            return null
+    }
