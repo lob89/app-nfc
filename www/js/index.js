@@ -117,31 +117,28 @@ var app = {
 
 };
 
+function getTime() {
+        var currentdate = new Date(); 
+        var datetime = "Last Sync: " + currentdate.getDate() + "/"
+            + (currentdate.getMonth()+1)  + "/" 
+            + currentdate.getFullYear() + " @ "  
+            + currentdate.getHours() + ":"  
+            + currentdate.getMinutes() + ":" 
+            + currentdate.getSeconds();
+        var v = new Date().getTime();
+        return v;
+} 
 
+function fakeTag(id) {
+    var scanned = id;
+    if (window.confirm('Tag contains ID - ' + scanned)) {
+        $('#thelist').append("<li> ID IS -" + scanned + "</li>");
+         console.log("scann id added to app" + id);
+        }
+        else
+        {
+            // They clicked no
+        }
+        return null
+}
 
-    function getTime() {
-
-            var currentdate = new Date(); 
-            var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " @ "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds();
-            var v = new Date().getTime();
-            return v;
-
-    } 
-
-    function fakeTag(id) {
-        var scanned = id;
-        if (window.confirm('Tag contains ID - ' + scanned)) {
-            $('#thelist').append("<li> ID IS -" + scanned + "</li>");
-             console.log("scann id added to app" + id);
-            }
-            else
-            {
-                // They clicked no
-            }
-            return null
-    }

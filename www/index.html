@@ -35,43 +35,35 @@
     </head>
     <body>
         <div id="scanner">
+            <img id="top-logo" src="img/aspex-logo-light.jpg">
 
-        <img id="top-logo" src="img/aspex-logo-light.jpg">
-
-        <div id="scanned">
-            <h1>Scanned</h1>
-            <ul id="thelist">
-
-            </ul>
-        </div>
-
-        <div id="scanner-logo-container">
-            <div>
-            <a href="#" onClick="test()">
-                <p id="status">Please scan tag</p>
-                <img src="img/aspex-logo-blank.jpg">
-            </a>
+            <div id="scanned">
+                <h1>Scanned</h1>
+                <ul id="thelist">
+                </ul>
             </div>
-        </div>
-        <div class="app">
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+
+            <div id="scanner-logo-container">
+                <div>
+                <a href="#">
+                    <p id="status">Please scan tag</p>
+                    <img src="img/aspex-logo-blank.jpg">
+                </a>
+                </div>
             </div>
-        </div>
 
-
+            <div class="app">
+                <div id="deviceready" class="blink">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Device is Ready</p>
+                </div>
+            </div>
 
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
-
-                    function test() {
-            id = 2;
-             window.location = 'view.html?id=' + id;
-        }
         </script>
     </body>
 </html>
