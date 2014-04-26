@@ -67,7 +67,8 @@ var app = {
             if (window.confirm('Tag contains ID - ' + id))
             {
 
-                $('#thelist').append("<li> ID IS -" + scanned + "</li>");
+                $('#thelist').append("<li> ID -" + id + "</li>");
+                
                 console.log("scann id added to app");
 
             }
